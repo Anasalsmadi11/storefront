@@ -23,6 +23,6 @@ const mapStateToProps = (state) => ({
     activeChange: state.activateReducer
     
 })
-const mapDispatchToProps = {active}; 
+const mapDispatchToProps = {active};  
 export default connect(mapStateToProps,mapDispatchToProps)(Categories);
 
