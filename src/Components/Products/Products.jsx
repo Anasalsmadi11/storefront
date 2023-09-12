@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from "react-redux";
+import { addItem } from '../../Store/Cart';
 
 // ++++++++++++++++++++++++++++++++++
 import Card from 'react-bootstrap/Card';
@@ -10,15 +11,18 @@ import photo from '../../assets/photo.jpg'
 
 
 function Products(props) {
+
+
   return (
     <div>
        
         <h2>{props.activeChange.activeCategory}</h2>
         
         <div  style={{display:"flex"}}>
-        {props.activeChange.products.map((product,idx)=>{
-        if(product.cateAssociation === props.activeChange.activeCategory){
 
+        {props.productAdd.products.map((product,idx)=>{
+        if(product.cateAssociation === props.activeChange.activeCategory){
+          console.log("product",product )
             return(
         <Container className='container'>
         <Row>
@@ -32,10 +36,16 @@ function Products(props) {
         <Card.Text>
         {product.description}
         </Card.Text>
+        <Card.Text>
+        price: {product.price}
+        </Card.Text>
+        <Card.Text>
+        quantity: {product.count}
+        </Card.Text>
       </Card.Body>
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+        <Card.Link href="#" onClick={()=>props.addItem(product)}>ADD TO CART</Card.Link>
+        <Card.Link href="#" >VIEW DETAILS</Card.Link>
       </Card.Body>
     </Card>
      </Col>
@@ -45,28 +55,18 @@ function Products(props) {
         }
     })} 
                 </div>
-        {/* <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-      <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
-        <Card.Text>
-        {product.description}
-        </Card.Text>
-      </Card.Body>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card> */}
+
     </div>
     
   )
 }
 
 const mapStateToProps = (state) => ({ 
-    activeChange: state.activateReducer
+    activeChange: state.activateReducer,
+    productAdd: state.productReducer
     
 })
 
+const mapDispatchToProps = {addItem}; 
 
-export default connect(mapStateToProps)(Products);
+export default connect(mapStateToProps,mapDispatchToProps)(Products);

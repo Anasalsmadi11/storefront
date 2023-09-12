@@ -60,3 +60,17 @@ width: 80%;
 
 }
 
+.cartItems{
+  position: absolute;
+  z-index: 1;
+  right: 15px;
+  background-color: #eee;
+  padding: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+
+}
+.cartItem{
+  margin-left: 15px;
+}

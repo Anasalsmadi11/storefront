@@ -2,7 +2,7 @@
 import { connect } from "react-redux";
 import Products from "../Products/Products";
 import { active} from "../../Store/categories";
-
+// import SimpleCart from "../SimpleCart/SimpleCart ";
 function Categories(props) {
   return (
     <div >
@@ -13,6 +13,7 @@ function Categories(props) {
                 </span>
             )
         })}
+
         <section>
              <Products/>
         </section>
@@ -21,7 +22,6 @@ function Categories(props) {
 }
 const mapStateToProps = (state) => ({ 
     activeChange: state.activateReducer
-    
 })
 const mapDispatchToProps = {active};  
 export default connect(mapStateToProps,mapDispatchToProps)(Categories);
