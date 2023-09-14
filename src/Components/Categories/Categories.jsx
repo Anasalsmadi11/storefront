@@ -8,11 +8,16 @@ function Categories(props) {
     <div >
         {props.activeChange.Categories.map((category,idx)=>{
             return(
+                <>
                 <span  key={idx} onClick={()=>props.active(category.normalizedName)}>
                     {` ${category.normalizedName} |`}
                 </span>
+            
+                {/* {category.normalizedName === props.activeChange.activeCategory && <div>{category.description}</div>} */}
+                </>
             )
         })}
+
 
         <section>
              <Products/>

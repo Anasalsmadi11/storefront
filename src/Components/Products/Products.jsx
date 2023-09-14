@@ -1,17 +1,21 @@
 import React from 'react'
 import { connect } from "react-redux";
 import { addItem } from '../../Store/Cart';
+import { getData } from '../../Store/actions';
+import { useEffect } from 'react'
 
 // ++++++++++++++++++++++++++++++++++
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import { Container, Row, Col ,Image } from 'react-bootstrap';
 import photo from '../../assets/photo.jpg'
 // ++++++++++++++++++++++++++++++++++
 
 
 function Products(props) {
-
+ 
+  useEffect(()=>{
+    props.getData()
+  },[])
 
   return (
     <div>
@@ -22,11 +26,14 @@ function Products(props) {
 
         {props.productAdd.products.map((product,idx)=>{
         if(product.cateAssociation === props.activeChange.activeCategory){
-          console.log("product",product )
+         if(product.count > 0){
+
+         
+          // console.log("product",product )
             return(
-        <Container className='container'>
+        <Container key={idx} className='container'>
         <Row>
-         <Col key={idx} xs={12} sm={6} md={4} lg={3}>
+         <Col  xs={12} sm={6} md={4} lg={3}>
                
         <Card style={{ width: '18rem' }}>
       
@@ -53,6 +60,7 @@ function Products(props) {
     </Container>
             )
         }
+      }
     })} 
                 </div>
 
@@ -63,10 +71,10 @@ function Products(props) {
 
 const mapStateToProps = (state) => ({ 
     activeChange: state.activateReducer,
-    productAdd: state.productReducer
+    productAdd: state.dataFromApi
     
 })
 
-const mapDispatchToProps = {addItem}; 
+const mapDispatchToProps = {addItem,getData}; 
 
 export default connect(mapStateToProps,mapDispatchToProps)(Products);
