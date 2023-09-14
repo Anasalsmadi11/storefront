@@ -6,7 +6,9 @@ import SimpleCart from './Components/SimpleCart/SimpleCart '
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+
+function App(props) {
+
 
 
   return (

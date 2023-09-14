@@ -10,7 +10,7 @@ function SimpleCart (props) {
       return(
  
         <span className='cartItem'>
-          {item.name}  <CloseButton onClick={()=>props.removeItem(item)}/>;
+          {item.name}  <CloseButton onClick={()=>props.removeItem(item)}/>
         </span>
 
          

@@ -2,17 +2,11 @@ const initialState={
     Categories:[
         {normalizedName:"ELECTRONICS",displayName:"ELECTRONICS",description:"Elcitronics Description Goes Here"},
         {normalizedName:"FOOD",displayName:"FOOD",description:"Food Description Goes Here"},
+        {normalizedName:"GAMES",displayName:"GAMES",description:"Games Description Goes Here"},
+        {normalizedName:"WEAPONS",displayName:"WEAPONS",description:"Weapons Description Goes Here"},
         
     ],
     activeCategory:'' ,
-    // products:[
-    //     {cateAssociation:"FOOD", name:"burger",description:"burger discription",price:10, count:0},
-    //     {cateAssociation:"FOOD", name:"shawarma",description:"shawarma discription",price:5, count:0},
-    //     {cateAssociation:"FOOD", name:"flafl",description:"flafl discription",price:2, count:0},
-    //     {cateAssociation:"ELECTRONICS", name:"TV",description:"TV discription",price:500, count:0},
-    //     {cateAssociation:"ELECTRONICS", name:"iPad",description:"iPad discription",price:200, count:0},
-    //     {cateAssociation:"ELECTRONICS", name:"computer",description:"computer discription",price:800, count:0}
-    // ]
 }
 
 export default (state= initialState, action)=>{
