@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
     switch (type) {
         case 'ADD':
             let counter= state.products.map((item)=>{
-                console.log("payload",payload)
+                // console.log("payload",payload)
                 if(payload.name == item.name ){
                     
                     return{
