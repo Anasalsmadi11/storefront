@@ -76,6 +76,10 @@ width: 80%;
   margin-left: 15px;
 }
 
-.container{
+/* .container{
+  flex-wrap: wrap;
+} */
+.container1{
+  display:flex ;
   flex-wrap: wrap;
 }

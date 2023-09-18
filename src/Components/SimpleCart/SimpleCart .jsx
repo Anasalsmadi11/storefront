@@ -13,8 +13,6 @@ function SimpleCart (props) {
           {item.name}  <CloseButton onClick={()=>props.removeItem(item)}/>
         </span>
 
-         
-
       )
     })}</div>
   )

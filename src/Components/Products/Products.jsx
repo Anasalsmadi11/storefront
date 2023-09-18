@@ -31,14 +31,14 @@ function Products(props) {
          
           // console.log("product",product )
             return(
-        <Container key={idx} className='container'>
-        <Row>
-         <Col  xs={12} sm={6} md={4} lg={3}>
+        <Container xs={12} sm={6} md={4} lg={3}  key={idx} >
+        <Row >
+         <Col  >
                
-        <Card style={{ width: '18rem' }}>
+        <Card className='container1' style={{ width: '20rem'}}>
       
       <Image src={photo} thumbnail />
-      <Card.Body>
+      <Card.Body >
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>
         {product.description}
