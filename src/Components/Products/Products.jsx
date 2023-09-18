@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addItem } from '../../Store/Cart';
 import { getData } from '../../Store/actions';
 import { useEffect } from 'react'
-
+import { Link } from 'react-router-dom';
 // ++++++++++++++++++++++++++++++++++
 import Card from 'react-bootstrap/Card';
 import { Container, Row, Col ,Image } from 'react-bootstrap';
@@ -22,7 +22,7 @@ function Products(props) {
        
         <h2>{props.activeChange.activeCategory}</h2>
         
-        <div  style={{display:"flex"}}>
+        <div className='itemscss'>
 
         {props.productAdd.products.map((product,idx)=>{
         if(product.cateAssociation === props.activeChange.activeCategory){
@@ -31,11 +31,11 @@ function Products(props) {
          
           // console.log("product",product )
             return(
-        <Container xs={12} sm={6} md={4} lg={3}  key={idx} >
+        <Container  md={4}   key={idx} >
         <Row >
          <Col  >
                
-        <Card className='container1' style={{ width: '20rem'}}>
+        <Card className='container1' >
       
       <Image src={photo} thumbnail />
       <Card.Body >
@@ -51,8 +51,10 @@ function Products(props) {
         </Card.Text>
       </Card.Body>
       <Card.Body>
-        <Card.Link href="#" onClick={()=>props.addItem(product)}>ADD TO CART</Card.Link>
-        <Card.Link href="#" >VIEW DETAILS</Card.Link>
+        <Card.Link onClick={()=>props.addItem(product)}>ADD TO CART</Card.Link>
+        {/* <Card.Link href={`/details/${product.id}`} >VIEW DETAILS</Card.Link> */}
+      <Card.Link as={Link} to={`/details/${product.id}`}>VIEW DETAILS</Card.Link>
+
       </Card.Body>
     </Card>
      </Col>

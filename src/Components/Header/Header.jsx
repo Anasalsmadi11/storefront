@@ -3,20 +3,22 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
     <div >
             <Navbar className='navbar'  bg="dark" data-bs-theme="dark">
         <Container >
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-          </Nav>
-            <Nav.Link style={{color:"white"}} href="#pricing">CART ({props.cart.productsCart.length})</Nav.Link>
+          <Navbar.Brand as={Link} to="/" >Navbar</Navbar.Brand>
+
+            <Nav.Link  as={Link} to="/cart" style={{color:"white"}}>CART ({props.cart.productsCart.length})</Nav.Link> {/* as={Link} to="/cart" this makes it behave as a link */}
         </Container>
       </Navbar>
+ 
+
+      
+      
       </div>
     
   )

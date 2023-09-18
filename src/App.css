@@ -1,6 +1,6 @@
 #root {
   width: 100%;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -51,7 +51,7 @@
   position: absolute;
   display: flex;
   align-items: center;
-width: 80%;
+width: 100%;
   bottom: -30px;
 
   background-color: #eee;
@@ -73,7 +73,9 @@ width: 80%;
 
 }
 .cartItem{
-  margin-left: 15px;
+  margin-left: 50px;
+  margin-top: 10px;
+
 }
 
 /* .container{
@@ -82,4 +84,43 @@ width: 80%;
 .container1{
   display:flex ;
   flex-wrap: wrap;
+}
+
+.cardd{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+div input{
+
+  border-radius: 3px;
+  margin-top: 10px;
+/* border-width: 0; */
+border-width: 0px 0px 2px 0px;
+}
+
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+/* .div2{
+  position: relative;
+} */
+.formbtn:hover{
+background-color: #eee;
+}
+
+.spann{
+  display: inline-block;
+  padding-right: 335px;
+}
+
+.itemscss{
+  display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
 }
